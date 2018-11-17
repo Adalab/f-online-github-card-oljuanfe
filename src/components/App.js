@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AllUsersSelect from './AllUsersSelect';
-import './App.css';
+import UserCard from './UserCard';
+import '../styles/App.css';
 
 class App extends Component {
   constructor (props) {
@@ -8,6 +9,7 @@ class App extends Component {
     this.state = {
       adalabMembersInfo: [],
       adalabUsers: [],
+      selectChosenUser: '', 
     }
     this.fetchAdalabInfo = this.fetchAdalabInfo.bind(this);
     this.handleSelectClick = this.handleSelectClick.bind(this);
@@ -38,12 +40,17 @@ class App extends Component {
     });
   }
 
-  handleSelectClick() {
-    console.log('CLICKANDO')
+  handleSelectClick(event) {
+    console.log('CLICKANDO');
+    console.log('evento', event.currentTarget.value);
+    this.setState({selectChosenUser: event.currentTarget.value });
   }
 
   render() {
-    const {adalabUsers} = this.state;
+    const {
+      adalabUsers,
+      selectChosenUser,
+    } = this.state;
     console.log('state', this.state);
     return (
       <div className="App">
@@ -51,7 +58,16 @@ class App extends Component {
           Hello
         </header>
         <main>
-          <AllUsersSelect adalabUsers={adalabUsers} handleSelectClick={this.handleSelectClick}/>
+          <AllUsersSelect 
+            adalabUsers={adalabUsers} 
+            handleSelectClick={this.handleSelectClick}
+          />
+          {
+            selectChosenUser !== ''
+            ? <UserCard selectChosenUser={selectChosenUser}/>
+            : <div>No data</div>
+          }
+          
         </main>
         <footer></footer>
       </div>
