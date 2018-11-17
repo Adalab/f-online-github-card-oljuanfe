@@ -64,9 +64,13 @@ class UserCard extends Component {
           <h1 className="user-name">
             {name}
           </h1>
-          <div className="user-location">
-            {location}
-          </div>
+          {
+            !location
+              ? ''
+              : (<div className="user-location">
+                  {location}
+                </div>)
+            }
         </div>
         <div className="user-secondary-info">
           <div className="user-repos">
