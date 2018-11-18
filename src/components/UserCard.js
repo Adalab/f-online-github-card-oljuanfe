@@ -54,8 +54,8 @@ class UserCard extends Component {
     console.log(currentUser.location, !currentUser.location)
     return (
       <div className="user-card-wrapper">
-        <div className="user-image">
-          <img src={avatar_url} alt=""/>
+        <div className="user-image" style={{backgroundImage: `url(${avatar_url})`, backgroundColor: 'red' }}>
+          {/* <img src={avatar_url} alt=""/> */}
         </div>
         <ul className="user-main-info">
           <li className="user-login">

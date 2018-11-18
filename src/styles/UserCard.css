@@ -1,0 +1,40 @@
+.user-card-wrapper {
+  margin: auto;
+  max-width: 304px;
+  height: 509px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.user-image {
+  width: 100%;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-main-info {
+  padding: 16px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-login {
+  color: #bdbcbe;
+}
+
+.user-name {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #00a48c;
+}
+
+.user-secondary-info {
+  display: flex;
+  flex-direction: row;
+}
