@@ -12,3 +12,15 @@
   width: 100%;
   max-width: 304px;
 }
+
+.empty-field {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 509px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  color: #a7a4a5;
+}

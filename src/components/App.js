@@ -64,7 +64,7 @@ class App extends Component {
           {
             selectChosenUser !== ''
             ? <UserCard selectChosenUser={selectChosenUser}/>
-            : <div>No data</div>
+            : (<div className="empty-field"><i className="fab fa-github"></i></div>)
           }
           
         </main>

@@ -29,12 +29,23 @@
 
 .user-login {
   color: #bdbcbe;
+  font-size: 0.9rem;
 }
 
 .user-name {
   margin-top: 5px;
   margin-bottom: 20px;
   color: #00a48c;
+  font-size: 1.5rem;
+}
+
+.fa-map-marker-alt {
+  margin-right: 5px;
+  color: #00e2c2;
+}
+
+.user-location {
+  font-size: 0.8rem;
 }
 
 .user-secondary-info {

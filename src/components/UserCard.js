@@ -54,8 +54,9 @@ class UserCard extends Component {
     console.log(currentUser.location, !currentUser.location)
     return (
       <div className="user-card-wrapper">
-        <div className="user-image" style={{backgroundImage: `url(${avatar_url})` }}>
-          {/* <img src={avatar_url} alt=""/> */}
+        <div 
+          className="user-image" 
+          style={{backgroundImage: `url(${avatar_url})` }}>
         </div>
         <ul className="user-main-info">
           <li className="user-login">
@@ -71,7 +72,8 @@ class UserCard extends Component {
             !location
               ? ''
               : (<li className="user-location">
-                  <i className="fas fa-map-marker-alt"></i>{location}
+                  <i className="fas fa-map-marker-alt"></i>
+                  {location}
                 </li>)
             }
         </ul>

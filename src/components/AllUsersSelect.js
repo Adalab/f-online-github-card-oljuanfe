@@ -10,7 +10,12 @@ class AllUsersSelect extends Component {
     } = this.props;
     return (
       <div className="select-wrapper">
-        <select name="adalab-users" id="adalab-users"  className="select-users" onClick={handleSelectClick}>
+        <select 
+          name="adalab-users" 
+          id="adalab-users"  
+          className="select-users" 
+          onClick={handleSelectClick}
+        >
           <option value="">Seleccione un usuario</option>
           {
             adalabUsers.map(user => {
@@ -23,6 +28,7 @@ class AllUsersSelect extends Component {
           }
         
         </select>
+        
       </div>
     );
   }
