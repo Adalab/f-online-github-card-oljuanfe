@@ -71,7 +71,7 @@ class UserCard extends Component {
             !location
               ? ''
               : (<li className="user-location">
-                  {location}
+                  <i className="fas fa-map-marker-alt"></i>{location}
                 </li>)
             }
         </ul>
