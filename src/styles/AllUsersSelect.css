@@ -1,0 +1,15 @@
+.select-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.select-users {
+  width: 100%;
+  max-width: 275px;;
+  height: 33px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 0 2px 4px rgba(189, 188, 190, 0.4);
+}

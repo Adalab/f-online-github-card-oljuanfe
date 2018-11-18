@@ -1,11 +1,14 @@
 .user-card-wrapper {
-  margin: auto;
-  max-width: 304px;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: 509px;
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 0 0 2px 4px rgba(189, 188, 190, 0.4);
 }
 
 .user-image {
@@ -35,6 +38,34 @@
 }
 
 .user-secondary-info {
+  padding-top: 28px;
+  padding-bottom: 18px;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  background: linear-gradient(#00a58d, #00e2c2);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.secondary-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub-item-number {
+  font-size: 3rem;
+}
+
+.sub-item-info {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.time-as-user {
+  position: absolute;
+  top: 100%;
+  right: 0;
 }
