@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './UserCard.css';
+import '../styles/UserCard.css';
 
 class UserCard extends Component {
   constructor(props) {
@@ -53,36 +53,39 @@ class UserCard extends Component {
     console.log(selectChosenUser);
     console.log(currentUser.location, !currentUser.location)
     return (
-      <div className="">
+      <div className="user-card-wrapper">
         <div className="user-image">
           <img src={avatar_url} alt=""/>
         </div>
-        <div className="user-main-info">
-          <span className="user-login">
+        <ul className="user-main-info">
+          <li className="user-login">
             @{login}
-          </span>
-          <h1 className="user-name">
-            {name}
-          </h1>
+          </li>
+          <li>
+            <h1 className="user-name">
+              {name}
+            </h1>
+          </li>
+          
           {
             !location
               ? ''
-              : (<div className="user-location">
+              : (<li className="user-location">
                   {location}
-                </div>)
+                </li>)
             }
-        </div>
-        <div className="user-secondary-info">
-          <div className="user-repos">
+        </ul>
+        <ul className="user-secondary-info">
+          <li className="user-repos">
             {public_repos} Repos
-          </div>
-          <div className="user-followers">
+          </li>
+          <li className="user-followers">
             {followers} Followers
-          </div>
-          <div className="user-following">
+          </li>
+          <li className="user-following">
             {following} Following
-          </div>
-        </div>
+          </li>
+        </ul>
         <span className="time-as-user">
           {created_at}
         </span>

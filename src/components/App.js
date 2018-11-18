@@ -53,11 +53,10 @@ class App extends Component {
     } = this.state;
     console.log('state', this.state);
     return (
-      <div className="App">
-        <header className="App-header">
-          Hello
+      <div className="app-wrapper">
+        <header className="header">
         </header>
-        <main>
+        <main className="main">
           <AllUsersSelect 
             adalabUsers={adalabUsers} 
             handleSelectClick={this.handleSelectClick}
@@ -69,7 +68,7 @@ class App extends Component {
           }
           
         </main>
-        <footer></footer>
+        <footer className="footer"></footer>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './AllUsersSelect.css';
+import '../styles/AllUsersSelect.css';
 
 class AllUsersSelect extends Component {
   render() {
@@ -9,7 +9,7 @@ class AllUsersSelect extends Component {
       handleSelectClick,
     } = this.props;
     return (
-      <div className="">
+      <div className="select-wrapper">
         <select name="adalab-users" id="adalab-users" onClick={handleSelectClick}>
           <option value="">Seleccione un usuario</option>
           {
