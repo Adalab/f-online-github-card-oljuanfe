@@ -1,5 +1,24 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import '../styles/UserCard.css';
+
+moment.locale('es', {
+  relativeTime : {
+    future : 'en %s',
+    past : 'hace %s',
+    s : 'segundos',
+    m : 'un minuto',
+    mm : '%d minutos',
+    h : 'una hora',
+    hh : '%d horas',
+    d : 'un día',
+    dd : '%d días',
+    M : 'un mes',
+    MM : '%d meses',
+    y : 'un año',
+    yy : '%d años'
+},
+})
 
 class UserCard extends Component {
   constructor(props) {
@@ -92,7 +111,7 @@ class UserCard extends Component {
           </li>
         </ul>
         <span className="time-as-user">
-          {created_at}
+          Miembro desde {moment(created_at).fromNow()}
         </span>
       </div>
     );

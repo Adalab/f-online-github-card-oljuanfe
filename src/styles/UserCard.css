@@ -8,7 +8,7 @@
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 0 2px 4px rgba(189, 188, 190, 0.4);
+  box-shadow: 0px 0px 4px 3px rgba(141, 139, 141, 0.4);
 }
 
 .user-image {
@@ -77,6 +77,10 @@
 
 .time-as-user {
   position: absolute;
+  padding-top: 10px;
+  padding-right: 20px;
   top: 100%;
   right: 0;
+  font-size: 0.9rem;
+  color: #5f6264;
 }
