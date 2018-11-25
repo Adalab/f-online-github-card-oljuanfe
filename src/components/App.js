@@ -21,7 +21,6 @@ class App extends Component {
     });
   }
 
-
   handleSelectClick(event) {
     this.setState({selectChosenUser: event.currentTarget.value });
   }
