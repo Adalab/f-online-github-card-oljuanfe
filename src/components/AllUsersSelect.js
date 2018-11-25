@@ -3,7 +3,6 @@ import '../styles/AllUsersSelect.css';
 
 class AllUsersSelect extends Component {
   render() {
-    console.log('props select', this.props);
     const { 
       adalabUsers,
       handleSelectClick,

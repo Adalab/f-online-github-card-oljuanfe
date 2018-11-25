@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AllUsersSelect from './AllUsersSelect';
 import UserCard from './UserCard';
-import {getAdalabers} from '../services/callAPI';  
+import { getAdalabers } from '../services/callAPI';  
 import '../styles/App.css';
 
 class App extends Component {
@@ -11,7 +11,6 @@ class App extends Component {
       adalabUsers: [],
       selectChosenUser: '', 
     }
-    // this.fetchAdalabInfo = this.fetchAdalabInfo.bind(this);
     this.handleSelectClick = this.handleSelectClick.bind(this);
   }
 
@@ -24,8 +23,6 @@ class App extends Component {
 
 
   handleSelectClick(event) {
-    console.log('CLICKANDO');
-    console.log('evento', event.currentTarget.value);
     this.setState({selectChosenUser: event.currentTarget.value });
   }
 
@@ -34,7 +31,6 @@ class App extends Component {
       adalabUsers,
       selectChosenUser,
     } = this.state;
-    console.log('state', this.state);
     return (
       <div className="app-wrapper">
         <header className="header">

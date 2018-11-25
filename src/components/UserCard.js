@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import '../styles/UserCard.css';
+import { getUserInfo } from '../services/callAPI';
 
 moment.locale('es', {
   relativeTime : {
@@ -26,35 +27,27 @@ class UserCard extends Component {
     this.state = {
       currentUser: {},
     }
-    this.getUserInfo = this.getUserInfo.bind(this);
   }
 
   componentDidMount() {
     if(this.props.selectChosenUser !== '') {
-      this.getUserInfo();
+      getUserInfo(this.props.selectChosenUser)
+      .then(user => {
+        this.setState({currentUser: user});
+      });
     }
   }
 
   componentDidUpdate() {
     if(this.props.selectChosenUser !== '' && this.props.selectChosenUser !== this.state.currentUser.login) {
-      this.getUserInfo();
+      getUserInfo(this.props.selectChosenUser)
+      .then(user => {
+        this.setState({currentUser: user});
+      });
     }
   }
 
-  getUserInfo() {
-    fetch(`https://api.github.com/users/${this.props.selectChosenUser}`)
-    .then(response =>  response.json())
-    .then(json => {
-      console.log('json', json);
-      this.setState({
-        currentUser: json
-      });
-    });
-  }
-
   render() {
-    console.log('props card', this.props);
-    console.log('state card', this.state);
     const { 
       selectChosenUser
     } = this.props;
@@ -69,8 +62,6 @@ class UserCard extends Component {
       following,
       created_at,
     } = currentUser;
-    console.log(selectChosenUser);
-    console.log(currentUser.location, !currentUser.location)
     return (
       <div className="user-card-wrapper">
         <div 
