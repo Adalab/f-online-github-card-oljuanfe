@@ -1,44 +1,27 @@
 import React, { Component } from 'react';
 import AllUsersSelect from './AllUsersSelect';
-import UserCard from './UserCard';  
+import UserCard from './UserCard';
+import {getAdalabers} from '../services/callAPI';  
 import '../styles/App.css';
 
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      adalabMembersInfo: [],
       adalabUsers: [],
       selectChosenUser: '', 
     }
-    this.fetchAdalabInfo = this.fetchAdalabInfo.bind(this);
+    // this.fetchAdalabInfo = this.fetchAdalabInfo.bind(this);
     this.handleSelectClick = this.handleSelectClick.bind(this);
   }
 
   componentDidMount() {
-    this.fetchAdalabInfo();
-  }
-
-  fetchAdalabInfo() {
-    console.log('consiguiendo info');
-    fetch('https://api.github.com/orgs/Adalab/members?per_page=200')
-    .then(response =>  response.json())
-    .then(json => {
-      console.log('json', json);
-      this.setState({
-        adalabMembersInfo: json
-      });
-      return json;
-    })
-    .then(json => {
-      const adalabMembers = [];
-      json.forEach(item => {
-        adalabMembers.push({userName: item.login, id: item.id});
-      })
-      console.log('adalab,member', adalabMembers);
-      this.setState({adalabUsers: adalabMembers});
+    getAdalabers()
+    .then(users => {
+      this.setState({adalabUsers: users.map(item => ({userName: item.login, id: item.id}))});
     });
   }
+
 
   handleSelectClick(event) {
     console.log('CLICKANDO');
